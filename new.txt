@@ -1,2 +1,2 @@
 Hi there, nice to meet you
-This is a demo txt file in a demo repository
+This is a demo text file in a demo repository
