@@ -1,52 +1,27 @@
 # Implementation of networking commands to retrieve device information and network configuration using Linux
 
-This file lists 8 highly popular Linux commands for getting device information and basic network configuration. Packet-capture commands are intentionally excluded. Each entry includes the command, its purpose, and an example.
+Aim
 
-**Ethics & Legal:** Use these commands only on systems you own or where you have explicit authorization.
+To implement and use a concise set of Linux commands to collect device information and basic network configuration, and to perform responsible passive OSINT (Google dorking) to locate publicly available organizational information.
 
----
+Procedure
 
-## Selected 8 Popular Commands (no packet-capture)
+1. Run the eight chosen commands to gather host and network data:
+   - `uname -a`, `hostnamectl`, `lscpu`, `ip addr`, `ip route`, `ss -tulwn`, `ping <host>`, `traceroute <host>`
+2. Record outputs to a timestamped report (e.g., redirect outputs into a single file).
+3. Perform responsible Google dorking using placeholder-based queries to collect only publicly posted information (replace `[domain]`, `[org]`, `[person]`).
+4. Review and store findings securely, and remove sensitive local artifacts if required.
 
-1. `uname -a` — Purpose: Show kernel, hostname, kernel version and architecture.
-   - Example: `uname -a`
+Expected outcomes
 
-2. `hostnamectl` — Purpose: Show/manage system hostname and basic OS information (systemd systems).
-   - Example: `hostnamectl`
+- A compact inventory of system details: kernel, hostname, CPU, and basic hardware identifiers.
+- Network configuration snapshot: interfaces, assigned IPs, routes, listening services, and basic connectivity checks.
+- A small set of saved report files containing command outputs for later review.
+- A list of publicly available organizational pages and profiles found via safe Google dork queries.
 
-3. `lscpu` — Purpose: Display CPU architecture and details.
-   - Example: `lscpu`
+Conclusion
 
-4. `ip addr` (or `ip a`) — Purpose: Show IP addresses assigned to interfaces.
-   - Example: `ip addr show`
-
-5. `ip route` — Purpose: Show routing table and default gateway.
-   - Example: `ip route show`
-
-6. `ss -tulwn` — Purpose: Show listening sockets and open connections (replacement for `netstat`).
-   - Example: `ss -tulwn`
-
-7. `ping <host>` — Purpose: Basic ICMP reachability check and latency.
-   - Example: `ping -c 4 8.8.8.8`
-
-8. `traceroute <host>` (or `tracepath`) — Purpose: Show network path and hops to a destination.
-   - Example: `traceroute 8.8.8.8`
-
----
-
-## Short Notes
-
-- Prefer `ip` and `ss` for modern Linux over legacy `ifconfig`/`netstat`.
-- Use `sudo` where required for privileged commands.
-- Run potentially disruptive commands only with permission and understanding.
-
----
-
-If you want, I can now:
-- create a small `collect-netinfo.sh` script that runs these 8 commands and saves output to a report file, or
-- produce distro-specific variants (Debian/Ubuntu vs RHEL/CentOS).
-
-File: `/workspaces/csl/exp1.md`
+Using these eight commands alongside responsible Google dorking yields a fast, legal-first method to map device attributes and basic network state; always obtain authorization before probing or collecting data from systems or domains you do not own.
 
 ---
 
