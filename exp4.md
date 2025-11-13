@@ -38,6 +38,7 @@ Download & High-level Exploitation Approach (no credentials or exploit payloads)
     Machine has vulnerable Samba 2.2.1a
     Exploit link: https://www.exploit-db.com/exploits/10
 5. Download and compile:
+
     gcc samba-exploit.c -o samba-2.2.1a-exploit
 
     cd samba-2.2.1a-exploit
